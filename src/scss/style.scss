@@ -334,6 +334,9 @@ body {
       }
       .text {
         padding: 0;
+        p {
+          text-indent: 1rem;
+        }
       }
     }
   }
@@ -439,6 +442,11 @@ body {
   @include at-breakpoint(sm) {
     .where {
       justify-content: center;
+      flex-wrap: wrap;
+      text-align: center;
+      span {
+        text-align: center;
+      }
       &::after {
         display: none;
       }
@@ -449,6 +457,23 @@ body {
       align-items: center;
       svg {
         margin-right: .5rem;
+      }
+    }
+    .who {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      svg {
+        margin-right: .5rem;
+      }
+      span {
+        display: block;
+      }
+    }
+    .what {
+      .title {
+        text-align: center;
       }
     }
   }
@@ -546,20 +571,17 @@ body {
         }
       }
     }
+    .adGallery {
+      background: url(../img/adGallery.png) center/contain no-repeat;
+    }
+    .demoTool {
+      background: url(../img/demoTool.png) center/contain no-repeat;
+    }
     .free-cell {
       background: url(../img/freecell.png) center/contain no-repeat;
     }
-    .profile {
-      background: url(../img/profile.png) center/contain no-repeat;
-    }
     .responsive {
       background: url(../img/responsive.png) center/contain no-repeat;
-    }
-    .google-extension {
-      background: url(../img/googleExtension.png) center/contain no-repeat;
-    }
-    .mp3player {
-      background: url(../img/mp3player.png) center/contain no-repeat;
     }
   }
 }

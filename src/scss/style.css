@@ -946,6 +946,9 @@ body.menuFixed {
   #about .row .text {
     padding: 0;
   }
+  #about .row .text p {
+    text-indent: 1rem;
+  }
 }
 
 #resume table {
@@ -1045,6 +1048,11 @@ body.menuFixed {
 @media screen and (max-width: 480px) {
   #resume .where {
     justify-content: center;
+    flex-wrap: wrap;
+    text-align: center;
+  }
+  #resume .where span {
+    text-align: center;
   }
   #resume .where::after {
     display: none;
@@ -1056,6 +1064,21 @@ body.menuFixed {
   }
   #resume .when svg {
     margin-right: 0.5rem;
+  }
+  #resume .who {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  #resume .who svg {
+    margin-right: 0.5rem;
+  }
+  #resume .who span {
+    display: block;
+  }
+  #resume .what .title {
+    text-align: center;
   }
 }
 
@@ -1147,20 +1170,17 @@ body.menuFixed {
   background: inherit;
   filter: blur(0.3rem);
 }
+#portfolio .row .adGallery {
+  background: url(../img/adGallery.png) center/contain no-repeat;
+}
+#portfolio .row .demoTool {
+  background: url(../img/demoTool.png) center/contain no-repeat;
+}
 #portfolio .row .free-cell {
   background: url(../img/freecell.png) center/contain no-repeat;
 }
-#portfolio .row .profile {
-  background: url(../img/profile.png) center/contain no-repeat;
-}
 #portfolio .row .responsive {
   background: url(../img/responsive.png) center/contain no-repeat;
-}
-#portfolio .row .google-extension {
-  background: url(../img/googleExtension.png) center/contain no-repeat;
-}
-#portfolio .row .mp3player {
-  background: url(../img/mp3player.png) center/contain no-repeat;
 }
 
 #contact .row {
