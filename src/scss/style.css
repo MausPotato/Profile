@@ -948,10 +948,10 @@ body.menuFixed {
   }
 }
 
-#resume .row table {
+#resume table {
   align-items: flex-start;
 }
-#resume .row table::before {
+#resume table::before {
   display: flex;
   justify-content: flex-end;
   flex-shrink: 0;
@@ -961,72 +961,100 @@ body.menuFixed {
   color: darkcyan;
   padding-right: 0.5rem;
 }
-#resume .row table:nth-of-type(1)::before {
+#resume table:nth-of-type(1)::before {
   content: "EDUCATION";
 }
-#resume .row table:nth-child(3)::before {
+#resume table:nth-child(3)::before {
   content: "EXPERIENCE";
 }
-#resume .row table th {
+#resume table th {
   display: none;
   font-size: 2rem;
   color: darkcyan;
 }
-#resume .row .where {
+#resume .where {
   font-size: 1.2rem;
   font-weight: 900;
   color: darkcyan;
 }
-#resume .row .when {
+#resume .when {
   line-height: 2;
   color: darkcyan;
 }
-#resume .row .when svg {
+#resume .when svg {
   width: 1rem;
   height: 1rem;
   fill: darkcyan;
 }
-#resume .row .what {
+#resume .who {
+  line-height: 2;
+  color: darkcyan;
+}
+#resume .who svg {
+  width: 1rem;
+  height: 1rem;
+  fill: darkcyan;
+}
+#resume .what {
   padding-bottom: 1rem;
   color: var(--dark-font);
 }
+#resume .what .title {
+  display: block;
+  font-size: 1.2rem;
+  font-weight: bold;
+  line-height: 1.8;
+}
+#resume li {
+  list-style-type: none;
+  margin-bottom: 0.5rem;
+}
+#resume li::before {
+  content: "- ";
+  display: inline-block;
+  width: 1rem;
+}
+#resume li span {
+  display: block;
+  text-indent: 1.5rem;
+}
 @media screen and (max-width: 768px) {
-  #resume .row table {
+  #resume table {
     padding-left: 0;
   }
-  #resume .row table::before {
+  #resume table::before {
     display: none;
   }
-  #resume .row table th {
+  #resume table th {
     display: block;
   }
-  #resume .row .where {
+  #resume .where {
     display: flex;
     justify-content: space-between;
   }
-  #resume .row .where::after {
+  #resume .where::after {
     content: "2019/09 ~ 1019/11";
     padding-left: 1.5rem;
     background: url(../img/calendar-alt-regular.svg) left/1rem no-repeat;
     fill: darkcyan;
   }
-  #resume .row .when {
+  #resume .when {
     display: none;
   }
 }
 @media screen and (max-width: 480px) {
-  #resume .row .where {
+  #resume .where {
     justify-content: center;
   }
-  #resume .row .where::after {
+  #resume .where::after {
     display: none;
   }
-  #resume .row .when {
+  #resume .when {
     display: flex;
     justify-content: center;
     align-items: center;
   }
-  #resume .row .when svg {
+  #resume .when svg {
     margin-right: 0.5rem;
   }
 }

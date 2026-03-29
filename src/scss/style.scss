@@ -340,89 +340,115 @@ body {
 }
 
 #resume {
-  .row {
-    table {
-      align-items: flex-start;
+  table {
+    align-items: flex-start;
+    &::before {
+      display: flex;
+      justify-content: flex-end;
+      flex-shrink: 0;
+      width: 11rem;
+      font-size: 1.5rem;
+      font-weight: 900;
+      color: darkcyan;
+      padding-right: .5rem;
+    }
+    &:nth-of-type(1)::before {
+      content: "EDUCATION";
+    }
+    &:nth-child(3) {
       &::before {
-        display: flex;
-        justify-content: flex-end;
-        flex-shrink: 0;
-        width: 11rem;
-        font-size: 1.5rem;
-        font-weight: 900;
-        color: darkcyan;
-        padding-right: .5rem;
+        content: "EXPERIENCE";
       }
-      &:nth-of-type(1)::before {
-        content: "EDUCATION";
-      }
-      &:nth-child(3) {
-        &::before {
-          content: "EXPERIENCE";
-        }
+    }
+    th {
+      display: none;
+      font-size: 2rem;
+      color: darkcyan;
+    }
+  }
+  .where {
+    font-size: 1.2rem;
+    font-weight: 900;
+    color: darkcyan;
+  }
+  .when {
+    line-height: 2;
+    color: darkcyan;
+    svg {
+      width: 1rem;
+      height: 1rem;
+      fill: darkcyan;
+    }
+  }
+  .who {
+    line-height: 2;
+    color: darkcyan; 
+    svg {
+      width: 1rem;
+      height: 1rem;
+      fill: darkcyan;
+    }
+  }
+  .what {
+    padding-bottom: 1rem;
+    color: var(--dark-font);
+    .title {
+      display: block;
+      font-size: 1.2rem;
+      font-weight: bold;
+      line-height: 1.8;
+    }
+  }
+  li {
+    list-style-type: none;
+    margin-bottom: .5rem;
+    &::before {
+      content: "- ";
+      display: inline-block;
+      width: 1rem;
+    }
+    span {
+      display: block;
+      text-indent: 1.5rem;
+    }
+  }
+  @include at-breakpoint(md) {
+    table {
+      padding-left: 0;
+      &::before {
+        display: none;
       }
       th {
-        display: none;
-        font-size: 2rem;
-        color: darkcyan;
+        display: block;
       }
     }
     .where {
-      font-size: 1.2rem;
-      font-weight: 900;
-      color: darkcyan;
-    }
-    .when {
-      line-height: 2;
-      color: darkcyan;
-      svg {
-        width: 1rem;
-        height: 1rem;
+      display: flex;
+      justify-content: space-between;
+      &::after {
+        content: "2019/09 ~ 1019/11";
+        padding-left: 1.5rem;
+        background: url(../img/calendar-alt-regular.svg) left/ 1rem no-repeat;
         fill: darkcyan;
       }
     }
-    .what {
-      padding-bottom: 1rem;
-      color: var(--dark-font);
+    .when {
+      display: none;
     }
-    @include at-breakpoint(md) {
-      table {
-        padding-left: 0;
-        &::before {
-          display: none;
-        }
-        th {
-          display: block;
-        }
-      }
-      .where {
-        display: flex;
-        justify-content: space-between;
-        &::after {
-          content: "2019/09 ~ 1019/11";
-          padding-left: 1.5rem;
-          background: url(../img/calendar-alt-regular.svg) left/ 1rem no-repeat;
-          fill: darkcyan;
-        }
-      }
-      .when {
+  }
+  @include at-breakpoint(sm) {
+    .where {
+      justify-content: center;
+      &::after {
         display: none;
       }
     }
-    @include at-breakpoint(sm) {
-      .where {
-        justify-content: center;
-        &::after {
-          display: none;
-        }
-      }
-      .when {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        svg {
-          margin-right: .5rem;
-        }
+    .when {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      svg {
+        margin-right: .5rem;
       }
     }
   }
