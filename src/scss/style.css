@@ -1135,51 +1135,37 @@ body.menuFixed {
   flex-wrap: wrap;
   justify-content: flex-start;
 }
-#portfolio .row a {
-  margin: 1rem 0;
-  position: relative;
-}
-#portfolio .row a::before {
-  content: "";
-  padding-bottom: 50%;
-}
-#portfolio .row a .works {
-  display: none;
-  align-items: center;
-  flex-direction: column;
-  font-size: 1.5rem;
-  color: white;
-  filter: drop-shadow(0.2rem 0.2rem 0.3rem black);
-  position: absolute;
-  z-index: 2;
-}
-#portfolio .row a .coming-soon {
-  font-size: 1rem;
-}
-#portfolio .row a:hover .works {
+#portfolio .works {
   display: flex;
+  flex-direction: column;
+  min-height: 400px;
+  margin-bottom: 1rem;
 }
-#portfolio .row a:hover::after {
-  content: "";
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 1;
-  background: inherit;
-  filter: blur(0.3rem);
+#portfolio img {
+  width: 90%;
+  min-height: 200px;
+  aspect-ratio: 16/9;
 }
-#portfolio .row .adGallery {
-  background: url(../img/adGallery.png) center/contain no-repeat;
+#portfolio h3 {
+  font-size: 1.2rem;
+  line-height: 2;
 }
-#portfolio .row .demoTool {
+#portfolio p {
+  flex-grow: 1;
+  font-size: 0.8rem;
+  text-indent: 1rem;
+  padding: 0 1rem;
+}
+#portfolio a {
+  color: var(--dark-font);
+}
+#portfolio .demoTool {
   background: url(../img/demoTool.png) center/contain no-repeat;
 }
-#portfolio .row .free-cell {
+#portfolio .free-cell {
   background: url(../img/freecell.png) center/contain no-repeat;
 }
-#portfolio .row .responsive {
+#portfolio .responsive {
   background: url(../img/responsive.png) center/contain no-repeat;
 }
 
