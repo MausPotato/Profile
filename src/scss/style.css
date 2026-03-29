@@ -911,6 +911,9 @@ body.menuFixed {
   --font: var(--light-font);
 }
 
+#hero .row {
+  flex-direction: column;
+}
 #hero {
   color: var(--dark-font);
 }
