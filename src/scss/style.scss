@@ -457,7 +457,14 @@ body {
 #skills {
   .skills {
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: space-around;
+  }
+  .skillCard {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-width: 220px;
   }
   .brand {
     display: flex;
@@ -470,49 +477,30 @@ body {
     border-radius: 50%;
     margin: 1rem;
     box-shadow: .1rem .2rem .3rem #CCCCCC;
-    &::before {
-      content: "";
+    svg {
       width: 6rem;
-      height: 4rem;
-      margin-top: 1rem;
+      height: 5rem;
+      stroke-width: 1.8;
+      margin-bottom: 8px;
     }
   }
-  .html5 {
-    &::before {
-      height: 5rem;
-      margin-top: 0;
-      background: url(../img/HTML5_logo_and_wordmark.svg) center/contain no-repeat;
-    }
+  .html {
+    color: #D65A31;
   }
-  .css3 {
-    &::before {
-      height: 5rem;
-      margin-top: 0;
-      background: url(../img/CSS3_logo_and_wordmark.svg) center/contain no-repeat;
-    }
+  .css {
+    color: #2D6EA3;
   }
   .js {
-    &::before {
-      background: url(../img/Unofficial_JavaScript_logo_2.svg) center/contain no-repeat;
-    }
+    color: #C9B414;
   }
-  .rwd {
-    &::before {
-      background: url(../img/Responsive_Web_Design_Logo.svg) center/cover no-repeat;
-    }
+  .debugging {
+    color: #2AA198;
   }
-  .jQuery {
-    &::before {
-      width: 8rem;
-      background: url(../img/JQuery-Logo.svg) center/contain no-repeat;
-    }
-  }
-  .git {
-    &::before {
-      background: url(../img/Git-Icon.png) center/contain no-repeat;
-    }
+  .tools {
+    color: #5B6C8F;
   }
   p {
+    font-size: .9rem;
     color: darkcyan;
   }
 }
