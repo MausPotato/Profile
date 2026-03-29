@@ -1,4 +1,16 @@
-dist/
-.cache/
+# mac
+.DS_Store
+
+# node
 node_modules/
-css/
+
+# build
+dist/
+
+# env
+.env
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
