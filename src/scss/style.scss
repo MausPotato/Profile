@@ -249,12 +249,21 @@ body {
 // main
 #main {
   --dark-bg: rgba(0, 0, 0, .8);
-  --dark-font: white;
+  --dark-font: #ddd;
   --light-bg: rgba(255, 255, 255, .9);
-  --light-font: #7D7D7D;
+  --light-font: #777;
   overflow: hidden;
+  letter-spacing: 2px;
   h1 {
+    display: flex;
+    justify-content: center;
+    width: 100%;
     margin: .5rem 0;
+  }
+  h2 {
+    display: flex;
+    justify-content: center;
+    width: 100%;
   }
   h3 {
     display: flex;
@@ -289,6 +298,10 @@ body {
       --font: var(--light-font);
     }
   }
+}
+
+#hero {
+  color: var(--dark-font);
 }
 
 #about {
