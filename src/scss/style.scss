@@ -16,7 +16,11 @@ body {
   min-width: 320px;
   font-family: 'Noto Sans TC', sans-serif;
   line-height: 1.5;
-  letter-spacing: .1rem;
+  letter-spacing: 2px;
+  --dark-bg: rgba(0, 0, 0, .8);
+  --dark-font: #ddd;
+  --light-bg: rgba(255, 255, 255, .9);
+  --light-font: #777;
   &.menuFixed {
     padding-top: 4rem;
   }
@@ -68,14 +72,9 @@ body {
       }
     }
   }
-  .facebook {
+  .email {
     &:hover {
-      background-color: #3B5998;
-    }
-  }
-  .twitter {
-    &:hover {
-      background-color: #1DA1F2;
+      background-color: #D93025;
     }
   }
   .github {
@@ -103,7 +102,7 @@ body {
   &::after {
     content: "";
     width: 100%;
-    height: 100vh;
+    height: 85vh;
     position: absolute;
     top: 0;
     left: 0;
@@ -114,7 +113,7 @@ body {
   > .row {
     justify-content: space-between;
     height: inherit;
-    height: 100vh;
+    height: 85vh;
     position: relative;
     z-index: 2;
     .title {
@@ -125,6 +124,21 @@ body {
         color: white;
         white-space: nowrap;
         filter: drop-shadow(.2rem .2rem .3rem black);
+      }
+      h3 {
+        font-size: 2rem;
+        font-weight: 700;
+        color: var(--dark-font);
+        margin-bottom: 1rem;
+        filter: drop-shadow(.2rem .2rem .3rem black);
+      }
+      p {
+        color: var(--dark-font);
+        line-height: 1.6;
+        filter: drop-shadow(.2rem .2rem .3rem black);
+        &:nth-of-type(2) {
+          margin-bottom: .5rem;
+        }
       }
     }
     .down-arrow {
@@ -248,12 +262,7 @@ body {
 
 // main
 #main {
-  --dark-bg: rgba(0, 0, 0, .8);
-  --dark-font: #ddd;
-  --light-bg: rgba(255, 255, 255, .9);
-  --light-font: #777;
   overflow: hidden;
-  letter-spacing: 2px;
   h2 {
     display: flex;
     flex-direction: column;
@@ -278,6 +287,9 @@ body {
         background-color: var(--font);
       }
     }
+    p {
+      color: var(--font);
+    }
     &:nth-child(odd) {
       background-color: var(--dark-bg);
       --font: var(--dark-font);
@@ -285,23 +297,6 @@ body {
     &:nth-child(even) {
       background-color: var(--light-bg);
       --font: var(--light-font);
-    }
-  }
-}
-
-#hero {
-  .row {
-    flex-direction: column;
-    transform: translateY(-24px);
-  }
-  color: var(--dark-font);
-  h3 {
-    margin-bottom: 1rem;
-  }
-  p {
-    line-height: 1.6;
-    &:nth-of-type(2) {
-      margin-bottom: .5rem;
     }
   }
 }
@@ -324,7 +319,6 @@ body {
       padding-left: 1rem;
       p {
         text-align: left;
-        color: var(--font);
         margin-bottom: .5rem;
       }
     }
@@ -394,7 +388,7 @@ body {
   }
   .what {
     padding-bottom: 1rem;
-    color: var(--dark-font);
+    color: var(--light-font);
     .title {
       display: block;
       font-size: 1.2rem;
@@ -557,25 +551,13 @@ body {
     padding: 0 1rem;
   }
   a {
-    color: var(--dark-font);
+    color: var(--light-font);
   }
-    // .adGallery {
-    //   background: url(../img/adGallery.png) center/contain no-repeat;
-    // }
-    .demoTool {
-      background: url(../img/demoTool.png) center/contain no-repeat;
-    }
-    .free-cell {
-      background: url(../img/freecell.png) center/contain no-repeat;
-    }
-    .responsive {
-      background: url(../img/responsive.png) center/contain no-repeat;
-    }
 }
 
 // footer
 #footer {
-  background-color: black;
+  background-color: var(--dark-bg);
   height: 3rem;
   display: flex;
   align-items: center;

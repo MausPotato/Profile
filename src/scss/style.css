@@ -539,7 +539,11 @@ body {
   min-width: 320px;
   font-family: "Noto Sans TC", sans-serif;
   line-height: 1.5;
-  letter-spacing: 0.1rem;
+  letter-spacing: 2px;
+  --dark-bg: rgba(0, 0, 0, .8);
+  --dark-font: #ddd;
+  --light-bg: rgba(255, 255, 255, .9);
+  --light-font: #777;
 }
 body.menuFixed {
   padding-top: 4rem;
@@ -596,11 +600,8 @@ body.menuFixed {
   transform: rotate(360deg);
   fill: white;
 }
-.social .facebook:hover {
-  background-color: #3B5998;
-}
-.social .twitter:hover {
-  background-color: #1DA1F2;
+.social .email:hover {
+  background-color: #D93025;
 }
 .social .github:hover {
   background-color: black;
@@ -624,7 +625,7 @@ body.menuFixed {
 #header::after {
   content: "";
   width: 100%;
-  height: 100vh;
+  height: 85vh;
   position: absolute;
   top: 0;
   left: 0;
@@ -635,7 +636,7 @@ body.menuFixed {
 #header > .row {
   justify-content: space-between;
   height: inherit;
-  height: 100vh;
+  height: 85vh;
   position: relative;
   z-index: 2;
 }
@@ -648,6 +649,21 @@ body.menuFixed {
   color: white;
   white-space: nowrap;
   filter: drop-shadow(0.2rem 0.2rem 0.3rem black);
+}
+#header > .row .title h3 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--dark-font);
+  margin-bottom: 1rem;
+  filter: drop-shadow(0.2rem 0.2rem 0.3rem black);
+}
+#header > .row .title p {
+  color: var(--dark-font);
+  line-height: 1.6;
+  filter: drop-shadow(0.2rem 0.2rem 0.3rem black);
+}
+#header > .row .title p:nth-of-type(2) {
+  margin-bottom: 0.5rem;
 }
 #header > .row .down-arrow {
   width: 3rem;
@@ -859,12 +875,7 @@ body.menuFixed {
 }
 
 #main {
-  --dark-bg: rgba(0, 0, 0, .8);
-  --dark-font: #ddd;
-  --light-bg: rgba(255, 255, 255, .9);
-  --light-font: #777;
   overflow: hidden;
-  letter-spacing: 2px;
 }
 #main h2 {
   display: flex;
@@ -891,6 +902,9 @@ body.menuFixed {
 #main > div h2::after {
   background-color: var(--font);
 }
+#main > div p {
+  color: var(--font);
+}
 #main > div:nth-child(odd) {
   background-color: var(--dark-bg);
   --font: var(--dark-font);
@@ -898,23 +912,6 @@ body.menuFixed {
 #main > div:nth-child(even) {
   background-color: var(--light-bg);
   --font: var(--light-font);
-}
-
-#hero .row {
-  flex-direction: column;
-  transform: translateY(-24px);
-}
-#hero {
-  color: var(--dark-font);
-}
-#hero h3 {
-  margin-bottom: 1rem;
-}
-#hero p {
-  line-height: 1.6;
-}
-#hero p:nth-of-type(2) {
-  margin-bottom: 0.5rem;
 }
 
 #about .row {
@@ -936,7 +933,6 @@ body.menuFixed {
 }
 #about .row .text p {
   text-align: left;
-  color: var(--font);
   margin-bottom: 0.5rem;
 }
 @media screen and (max-width: 768px) {
@@ -1000,7 +996,7 @@ body.menuFixed {
 }
 #resume .what {
   padding-bottom: 1rem;
-  color: var(--dark-font);
+  color: var(--light-font);
 }
 #resume .what .title {
   display: block;
@@ -1157,20 +1153,11 @@ body.menuFixed {
   padding: 0 1rem;
 }
 #portfolio a {
-  color: var(--dark-font);
-}
-#portfolio .demoTool {
-  background: url(../img/demoTool.png) center/contain no-repeat;
-}
-#portfolio .free-cell {
-  background: url(../img/freecell.png) center/contain no-repeat;
-}
-#portfolio .responsive {
-  background: url(../img/responsive.png) center/contain no-repeat;
+  color: var(--light-font);
 }
 
 #footer {
-  background-color: black;
+  background-color: var(--dark-bg);
   height: 3rem;
   display: flex;
   align-items: center;
