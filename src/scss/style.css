@@ -580,17 +580,11 @@ body.menuFixed {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 3rem;
-  height: 3rem;
+  width: 4rem;
+  height: 4rem;
   border-radius: 50%;
   border: 0.1rem solid white;
-  margin: 1rem;
-  transition: transform 0.8s ease;
-}
-.social a svg {
-  width: 1.5rem;
-  height: 1.5rem;
-  fill: white;
+  margin: 3rem 3rem 0;
   transition: transform 0.8s ease;
 }
 .social a:hover, .social a:active {
@@ -600,6 +594,12 @@ body.menuFixed {
   transform: rotate(360deg);
   fill: white;
 }
+.social svg {
+  width: 2rem;
+  height: 2rem;
+  fill: white;
+  transition: transform 0.8s ease;
+}
 .social .email:hover {
   background-color: #D93025;
 }
@@ -608,9 +608,22 @@ body.menuFixed {
 }
 @media screen and (max-width: 768px) {
   .social a {
-    width: 3.5rem;
-    height: 3.5rem;
-    margin: 1.5rem;
+    width: 5rem;
+    height: 5rem;
+  }
+  .social svg {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  .social a {
+    width: 4rem;
+    height: 4rem;
+  }
+  .social svg {
+    width: 2rem;
+    height: 2rem;
   }
 }
 
@@ -634,47 +647,44 @@ body.menuFixed {
   filter: brightness(0.7) blur(0.3rem);
 }
 #header > .row {
-  justify-content: space-between;
-  height: inherit;
   height: 85vh;
   position: relative;
   z-index: 2;
 }
-#header > .row .title {
+#header .title {
   flex-direction: column;
 }
-#header > .row .title h2 {
+#header .title h2 {
   font-size: 4rem;
   font-weight: 900;
   color: white;
   white-space: nowrap;
   filter: drop-shadow(0.2rem 0.2rem 0.3rem black);
 }
-#header > .row .title h3 {
+#header .title h3 {
   font-size: 2rem;
   font-weight: 700;
   color: var(--dark-font);
   margin-bottom: 1rem;
   filter: drop-shadow(0.2rem 0.2rem 0.3rem black);
 }
-#header > .row .title p {
+#header .title p {
   color: var(--dark-font);
   line-height: 1.6;
   filter: drop-shadow(0.2rem 0.2rem 0.3rem black);
 }
-#header > .row .title p:nth-of-type(2) {
+#header .title p:nth-of-type(2) {
   margin-bottom: 0.5rem;
 }
-#header > .row .down-arrow {
+#header .down-arrow {
   width: 3rem;
   height: 4rem;
   fill: white;
   position: absolute;
-  bottom: 1rem;
   left: calc(50% - 1.5rem);
   animation: down 3s infinite;
 }
-#header > .row .down-arrow:hover {
+#header .down-arrow:hover {
   fill: darkcyan;
 }
 @keyframes down {
@@ -688,16 +698,23 @@ body.menuFixed {
     bottom: 2.5rem;
   }
 }
+@media screen and (max-width: 768px) {
+  #header p {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+}
 @media screen and (max-width: 480px) {
-  #header > .row .title h2 {
+  #header .title h2 {
     font-size: 2.5rem;
     white-space: nowrap;
   }
-  #header > .row p {
-    text-align: center;
+  #header p {
+    font-size: 1rem;
   }
-  #header > .row .down-arrow {
+  #header .down-arrow {
     width: 2.5rem;
+    left: calc(50% - 1.25rem);
   }
   @keyframes down {
     0% {
@@ -709,11 +726,6 @@ body.menuFixed {
     100% {
       bottom: 3rem;
     }
-  }
-}
-@media screen and (max-width: 768px) {
-  #header {
-    flex-direction: column-reverse;
   }
 }
 
@@ -942,18 +954,26 @@ body.menuFixed {
   #about .row img {
     margin: 2rem;
   }
+  #about .row p {
+    font-size: 1.4rem;
+    line-height: 1.6;
+  }
   #about .row .text {
     padding: 0;
   }
-}
-@media screen and (max-width: 480px) {
   #about .row .myself {
     margin-bottom: 1rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  #about .row p {
+    font-size: 1rem;
   }
 }
 
 #resume table {
   align-items: flex-start;
+  margin-bottom: 1rem;
 }
 #resume table::before {
   display: flex;
@@ -1031,10 +1051,13 @@ body.menuFixed {
   }
   #resume table th {
     display: block;
+    font-size: 2.2rem;
   }
   #resume .where {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.4rem;
   }
   #resume .where::after {
     content: "2019/09 ~ 1019/11";
@@ -1042,15 +1065,42 @@ body.menuFixed {
     background: url(../img/calendar-alt-regular.svg) left/1rem no-repeat;
     fill: darkcyan;
   }
+  #resume .who {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+  }
+  #resume .who svg {
+    margin-right: 0.5rem;
+  }
   #resume .when {
     display: none;
   }
+  #resume .what {
+    font-size: 1.3rem;
+  }
+  #resume .what .title {
+    display: block;
+    font-size: 1.4rem;
+    font-weight: bold;
+    line-height: 1.8;
+    text-align: center;
+  }
+  #resume li {
+    font-size: 1.3rem;
+  }
 }
 @media screen and (max-width: 480px) {
+  #resume table th {
+    font-size: 1.4rem;
+  }
   #resume .where {
     justify-content: center;
     flex-wrap: wrap;
     text-align: center;
+    font-size: 1.2rem;
   }
   #resume .where span {
     text-align: center;
@@ -1079,11 +1129,15 @@ body.menuFixed {
     display: block;
   }
   #resume .what .title {
+    font-size: 1.3rem;
     text-align: center;
+  }
+  #resume li {
+    font-size: 1.2rem;
   }
 }
 
-#skills .skills {
+#skills .brandArea {
   flex-wrap: wrap;
   justify-content: space-around;
 }
@@ -1130,6 +1184,14 @@ body.menuFixed {
   font-size: 0.9rem;
   color: darkcyan;
 }
+@media screen and (max-width: 768px) {
+  #skills .skillCard {
+    min-width: 251px;
+  }
+  #skills p {
+    font-size: 1.2rem;
+  }
+}
 
 #portfolio .row {
   flex-wrap: wrap;
@@ -1167,9 +1229,20 @@ body.menuFixed {
 #portfolio a {
   color: var(--light-font);
 }
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 768px) {
+  #portfolio .row {
+    align-items: flex-start;
+  }
+  #portfolio h3 {
+    font-size: 1.4rem;
+  }
   #portfolio p {
-    font-size: 1rem;
+    font-size: 1.2rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  #portfolio .works {
+    margin-bottom: 1rem;
   }
 }
 

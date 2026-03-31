@@ -52,18 +52,12 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 3rem;
-    height: 3rem;
+    width: 4rem;
+    height: 4rem;
     border-radius: 50%;
     border: .1rem solid white;
-    margin: 1rem;
+    margin: 3rem 3rem 0;
     transition: transform .8s ease;
-    svg {
-      width: 1.5rem;
-      height: 1.5rem;
-      fill: white;
-      transition: transform .8s ease;
-    }
     &:hover, &:active {
       transform: scale(1.2);
       svg {
@@ -71,6 +65,12 @@ body {
         fill: white;
       }
     }
+  }
+  svg {
+    width: 2rem;
+    height: 2rem;
+    fill: white;
+    transition: transform .8s ease;
   }
   .email {
     &:hover {
@@ -84,9 +84,22 @@ body {
   }
   @include at-breakpoint(md) {
     a {
-      width: 3.5rem;
-      height: 3.5rem;
-      margin: 1.5rem;
+      width: 5rem;
+      height: 5rem;
+    }
+    svg {
+      width: 2.5rem;
+      height: 2.5rem;
+    }
+  }
+  @include at-breakpoint(sm) {
+    a {
+      width: 4rem;
+      height: 4rem;
+    }
+    svg {
+      width: 2rem;
+      height: 2rem;
     }
   }
 }
@@ -111,87 +124,88 @@ body {
     filter: brightness(.7) blur(.3rem);
   }
   > .row {
-    justify-content: space-between;
-    height: inherit;
     height: 85vh;
     position: relative;
     z-index: 2;
-    .title {
-      flex-direction: column;
-      h2 {
-        font-size: 4rem;
-        font-weight: 900;
-        color: white;
-        white-space: nowrap;
-        filter: drop-shadow(.2rem .2rem .3rem black);
-      }
-      h3 {
-        font-size: 2rem;
-        font-weight: 700;
-        color: var(--dark-font);
-        margin-bottom: 1rem;
-        filter: drop-shadow(.2rem .2rem .3rem black);
-      }
-      p {
-        color: var(--dark-font);
-        line-height: 1.6;
-        filter: drop-shadow(.2rem .2rem .3rem black);
-        &:nth-of-type(2) {
-          margin-bottom: .5rem;
-        }
+  }
+  .title {
+    flex-direction: column;
+    h2 {
+      font-size: 4rem;
+      font-weight: 900;
+      color: white;
+      white-space: nowrap;
+      filter: drop-shadow(.2rem .2rem .3rem black);
+    }
+    h3 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--dark-font);
+      margin-bottom: 1rem;
+      filter: drop-shadow(.2rem .2rem .3rem black);
+    }
+    p {
+      color: var(--dark-font);
+      line-height: 1.6;
+      filter: drop-shadow(.2rem .2rem .3rem black);
+      &:nth-of-type(2) {
+        margin-bottom: .5rem;
       }
     }
-    .down-arrow {
-      width: 3rem;
-      height: 4rem;
-      fill: white;
-      position: absolute;
-      bottom: 1rem;
-      left: calc(50% - 1.5rem);
-      animation: down 3s infinite;
-      &:hover {
-        fill: darkcyan;
-      }
-      @keyframes down {
-        0% {
-          bottom: 2.5rem;
-        }
-        50% {
-          bottom: .5rem;
-        }
-        100% {
-          bottom: 2.5rem;
-        }
-      }
+  }
+  .down-arrow {
+    width: 3rem;
+    height: 4rem;
+    fill: white;
+    position: absolute;
+    left: calc(50% - 1.5rem);
+    animation: down 3s infinite;
+    &:hover {
+      fill: darkcyan;
     }
-    @include at-breakpoint(sm) {
-      .title {
-        h2 {
-          font-size: 2.5rem;
-          white-space: nowrap;
-        }
+    @keyframes down {
+      0% {
+        bottom: 2.5rem;
       }
-      p {
-        text-align: center;
+      50% {
+        bottom: .5rem;
       }
-      .down-arrow {
-        width: 2.5rem;
-        @keyframes down {
-          0% {
-            bottom: 3rem;
-          }
-          50% {
-            bottom: 0;
-          }
-          100% {
-            bottom: 3rem;
-          }
-        }
+      100% {
+        bottom: 2.5rem;
       }
     }
   }
   @include at-breakpoint(md) {
-    flex-direction: column-reverse;
+    p {
+      font-size: 1.5rem;
+      text-align: center;
+    }
+  }
+  @include at-breakpoint(sm) {
+    .title {
+      h2 {
+        font-size: 2.5rem;
+        white-space: nowrap;
+      }
+    }
+    p {
+      font-size: 1rem;
+    }
+    .down-arrow {
+      width: 2.5rem;
+      left: calc(50% - 1.25rem);
+      @keyframes down {
+        0% {
+          bottom: 3rem;
+        }
+        50% {
+          bottom: 0;
+        }
+        100% {
+          bottom: 3rem;
+        }
+      }
+    }
   }
 }
 
@@ -329,13 +343,20 @@ body {
       img {
         margin: 2rem;
       }
+      p {
+        font-size: 1.4rem;
+        line-height: 1.6;
+      }
       .text {
         padding: 0;
       }
-    }
-    @include at-breakpoint(sm) {
       .myself {
         margin-bottom: 1rem;
+      }
+    }
+    @include at-breakpoint(sm) {
+      p {
+        font-size: 1rem;
       }
     }
   }
@@ -344,6 +365,7 @@ body {
 #resume {
   table {
     align-items: flex-start;
+    margin-bottom: 1rem;
     &::before {
       display: flex;
       justify-content: flex-end;
@@ -422,11 +444,14 @@ body {
       }
       th {
         display: block;
+        font-size: 2.2rem;
       }
     }
     .where {
       display: flex;
-      justify-content: space-between;
+      flex-direction: column;
+      align-items: center;
+      font-size: 1.4rem;
       &::after {
         content: "2019/09 ~ 1019/11";
         padding-left: 1.5rem;
@@ -434,15 +459,44 @@ body {
         fill: darkcyan;
       }
     }
+    .who {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.3rem;
+      margin-bottom: .5rem;
+      svg {
+        margin-right: .5rem;
+      }
+    }
     .when {
       display: none;
     }
+    .what {
+      font-size: 1.3rem;
+      .title {
+        display: block;
+        font-size: 1.4rem;
+        font-weight: bold;
+        line-height: 1.8;
+        text-align: center;
+      }
+    }
+    li {
+      font-size: 1.3rem;
+    }
   }
   @include at-breakpoint(sm) {
+    table {
+      th {
+        font-size: 1.4rem;
+      }
+    }
     .where {
       justify-content: center;
       flex-wrap: wrap;
       text-align: center;
+      font-size: 1.2rem;
       span {
         text-align: center;
       }
@@ -472,14 +526,18 @@ body {
     }
     .what {
       .title {
+        font-size: 1.3rem;
         text-align: center;
       }
+    }
+    li {
+      font-size: 1.2rem;
     }
   }
 }
 
 #skills {
-  .skills {
+  .brandArea {
     flex-wrap: wrap;
     justify-content: space-around;
   }
@@ -526,6 +584,14 @@ body {
     font-size: .9rem;
     color: darkcyan;
   }
+  @include at-breakpoint(md) {
+    .skillCard {
+      min-width: 251px;
+    }
+    p {
+      font-size: 1.2rem;
+    }
+  }
 }
 
 #portfolio {
@@ -565,10 +631,21 @@ body {
   a {
     color: var(--light-font);
   }
-  @include at-breakpoint(sm) {
+  @include at-breakpoint(md) {
+    .row {
+      align-items: flex-start;
+    }
+    h3 {
+      font-size: 1.4rem;
+    }
      p {
-      font-size: 1rem;
+      font-size: 1.2rem;
      }
+  }
+  @include at-breakpoint(sm) {
+    .works {
+      margin-bottom: 1rem;
+    }
   }
 }
 
