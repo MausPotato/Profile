@@ -1139,7 +1139,7 @@ body.menuFixed {
 
 #skills .brandArea {
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-evenly;
 }
 #skills .skillCard {
   display: flex;
