@@ -171,17 +171,20 @@ body {
           white-space: nowrap;
         }
       }
+      p {
+        text-align: center;
+      }
       .down-arrow {
         width: 2.5rem;
         @keyframes down {
           0% {
-            bottom: 6rem;
-          }
-          50% {
             bottom: 3rem;
           }
+          50% {
+            bottom: 0;
+          }
           100% {
-            bottom: 6rem;
+            bottom: 3rem;
           }
         }
       }
@@ -328,9 +331,11 @@ body {
       }
       .text {
         padding: 0;
-        p {
-          text-indent: 1rem;
-        }
+      }
+    }
+    @include at-breakpoint(sm) {
+      .myself {
+        margin-bottom: 1rem;
       }
     }
   }
@@ -500,7 +505,6 @@ body {
       width: 6rem;
       height: 5rem;
       stroke-width: 1.8;
-      margin-bottom: 8px;
     }
   }
   .html {
@@ -532,9 +536,6 @@ body {
   .works {
     flex-direction: column;
     min-height: 410px;
-    // border-radius: 6px;
-    // margin-bottom: 1rem;
-    // transition: transform 0.2s ease, box-shadow 0.2s ease;
     border-radius: 12px;
     padding: 8px;
     transition: all 0.2s ease;
@@ -563,6 +564,11 @@ body {
   }
   a {
     color: var(--light-font);
+  }
+  @include at-breakpoint(sm) {
+     p {
+      font-size: 1rem;
+     }
   }
 }
 
