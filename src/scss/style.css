@@ -710,7 +710,7 @@ body.menuFixed {
     white-space: nowrap;
   }
   #header p {
-    font-size: 1rem;
+    font-size: 1.2rem;
   }
   #header .down-arrow {
     width: 2.5rem;
@@ -967,7 +967,7 @@ body.menuFixed {
 }
 @media screen and (max-width: 480px) {
   #about .row p {
-    font-size: 1rem;
+    font-size: 1.2rem;
   }
 }
 
@@ -986,10 +986,10 @@ body.menuFixed {
   padding-right: 0.5rem;
 }
 #resume table:nth-of-type(1)::before {
-  content: "EDUCATION";
+  content: "EXPERIENCE";
 }
 #resume table:nth-child(3)::before {
-  content: "EXPERIENCE";
+  content: "EDUCATION";
 }
 #resume table th {
   display: none;
@@ -1143,10 +1143,12 @@ body.menuFixed {
 }
 #skills .skillCard {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   flex-direction: column;
-  min-width: 220px;
+  min-width: 320px;
+  max-width: 350px;
+  min-height: 250px;
 }
 #skills .brand {
   display: flex;
@@ -1165,24 +1167,25 @@ body.menuFixed {
   height: 5rem;
   stroke-width: 1.8;
 }
-#skills .html {
-  color: #D65A31;
-}
-#skills .css {
-  color: #2D6EA3;
-}
-#skills .js {
-  color: #C9B414;
+#skills .frontend {
+  color: #5A87B8;
+  transform: scale(1.5);
 }
 #skills .debugging {
   color: #2AA198;
+  transform: scale(1.5);
 }
 #skills .tools {
   color: #5B6C8F;
 }
+#skills .workflow {
+  color: #8B86A9;
+  transform: scale(1.3);
+}
 #skills p {
   font-size: 0.9rem;
   color: darkcyan;
+  text-align: center;
 }
 @media screen and (max-width: 768px) {
   #skills .skillCard {

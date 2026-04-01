@@ -189,7 +189,7 @@ body {
       }
     }
     p {
-      font-size: 1rem;
+      font-size: 1.2rem;
     }
     .down-arrow {
       width: 2.5rem;
@@ -356,7 +356,7 @@ body {
     }
     @include at-breakpoint(sm) {
       p {
-        font-size: 1rem;
+        font-size: 1.2rem;
       }
     }
   }
@@ -377,11 +377,11 @@ body {
       padding-right: .5rem;
     }
     &:nth-of-type(1)::before {
-      content: "EDUCATION";
+        content: "EXPERIENCE";
     }
     &:nth-child(3) {
       &::before {
-        content: "EXPERIENCE";
+        content: "EDUCATION";
       }
     }
     th {
@@ -543,10 +543,12 @@ body {
   }
   .skillCard {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     flex-direction: column;
-    min-width: 220px;
+    min-width: 320px;
+    max-width: 350px;
+    min-height: 250px;
   }
   .brand {
     display: flex;
@@ -565,24 +567,25 @@ body {
       stroke-width: 1.8;
     }
   }
-  .html {
-    color: #D65A31;
-  }
-  .css {
-    color: #2D6EA3;
-  }
-  .js {
-    color: #C9B414;
+  .frontend {
+    color: #5A87B8;
+    transform: scale(1.5);
   }
   .debugging {
     color: #2AA198;
+    transform: scale(1.5);
   }
   .tools {
     color: #5B6C8F;
   }
+  .workflow {
+    color: #8B86A9;
+    transform: scale(1.3);
+  }
   p {
     font-size: .9rem;
     color: darkcyan;
+    text-align: center;
   }
   @include at-breakpoint(md) {
     .skillCard {
