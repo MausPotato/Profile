@@ -57,7 +57,7 @@ body {
     border-radius: 50%;
     border: .1rem solid white;
     margin: 3rem 3rem 0;
-    transition: transform .8s ease;
+    transition: transform .8s ease, fill .3s ease;
     &:hover, &:active {
       transform: scale(1.2);
       svg {
@@ -70,16 +70,16 @@ body {
     width: 2rem;
     height: 2rem;
     fill: white;
-    transition: transform .8s ease;
+    transition: transform .8s ease, fill .3s ease;
   }
   .email {
     &:hover {
-      background-color: #D93025;
+      background-color: #C84A3F;
     }
   }
   .github {
     &:hover {
-      background-color: black;
+      background-color: #1f1f1f;
     }
   }
   @include at-breakpoint(md) {
