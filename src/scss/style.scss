@@ -327,7 +327,7 @@ body {
         content: "";
         padding-bottom: 100%;
       }
-      background: url(../img/myself.jpg) top center/cover no-repeat;
+      background: url(../img/myself.jpg) top left/110% no-repeat;
       border-radius: 50%;
       border: .5rem solid #FFFCE5;
     }
@@ -657,6 +657,9 @@ body {
   background-color: #F6F7F4;
   color: #3F4442;
   letter-spacing: 1px;
+  a {
+    text-decoration: none;
+  }
 }
 
 .projectTopbar {
@@ -668,9 +671,18 @@ body {
 
 .projectBack {
   justify-content: flex-start;
+  align-items: center;
+  gap: .5rem;
   color: #2F6F73;
   font-size: .9rem;
   transition: color .2s ease;
+  img {
+    width: 1.75rem;
+    height: 1.75rem;
+    border: 2px solid #FFFCE5;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
   &:hover {
     color: #303936;
   }
@@ -791,10 +803,17 @@ body {
   overflow: hidden;
   position: relative;
   iframe {
-    width: 100%;
+    width: calc(100% + 18px);
     height: 100%;
     border: 0;
     background-color: white;
+    display: block;
+    overflow: hidden;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    &::-webkit-scrollbar {
+      display: none;
+    }
   }
 }
 
@@ -825,11 +844,14 @@ body {
     padding: .5rem 0 .75rem;
     overflow: hidden;
     .row {
+      align-items: stretch;
       height: 100%;
     }
   }
   .adDemoList {
-    max-height: 100%;
+    height: clamp(562px, 86.56vh, 844px);
+    margin-top: 3.85rem;
+    max-height: calc(100% - 3.85rem);
     overflow: hidden;
   }
   .galleryHeading {
@@ -860,7 +882,7 @@ body {
   }
   .adPreviewHeader,
   .phoneFrame {
-    width: clamp(260px, 45vh, 390px);
+    width: clamp(260px, 40vh, 390px);
   }
   .adPreviewHeader {
     margin-bottom: .45rem;

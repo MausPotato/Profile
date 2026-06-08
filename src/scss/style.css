@@ -72,8 +72,7 @@ a {
 abbr[title] {
   border-bottom: none; /* 1 */
   text-decoration: underline; /* 2 */
-  -webkit-text-decoration: underline dotted;
-          text-decoration: underline dotted; /* 2 */
+  text-decoration: underline dotted; /* 2 */
 }
 
 /**
@@ -787,9 +786,7 @@ body.menuFixed {
     flex-direction: column;
     justify-content: space-between;
     position: relative;
-    -webkit-user-select: none;
-       -moz-user-select: none;
-            user-select: none;
+    user-select: none;
   }
   #nav #burger input {
     display: block;
@@ -938,7 +935,7 @@ body.menuFixed {
   padding-bottom: 100%;
 }
 #about .row .myself {
-  background: url(../img/myself.jpg) top center/cover no-repeat;
+  background: url(../img/myself.jpg) top left/110% no-repeat;
   border-radius: 50%;
   border: 0.5rem solid #FFFCE5;
 }
@@ -1255,6 +1252,9 @@ body.menuFixed {
   color: #3F4442;
   letter-spacing: 1px;
 }
+.projectPage a {
+  text-decoration: none;
+}
 
 .projectTopbar {
   padding: 1rem 0 0;
@@ -1265,9 +1265,18 @@ body.menuFixed {
 
 .projectBack {
   justify-content: flex-start;
+  align-items: center;
+  gap: 0.5rem;
   color: #2F6F73;
   font-size: 0.9rem;
   transition: color 0.2s ease;
+}
+.projectBack img {
+  width: 1.75rem;
+  height: 1.75rem;
+  border: 2px solid #FFFCE5;
+  border-radius: 50%;
+  flex-shrink: 0;
 }
 .projectBack:hover {
   color: #303936;
@@ -1388,10 +1397,17 @@ body.menuFixed {
   position: relative;
 }
 .phoneFrame iframe {
-  width: 100%;
+  width: calc(100% + 18px);
   height: 100%;
   border: 0;
   background-color: white;
+  display: block;
+  overflow: hidden;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.phoneFrame iframe::-webkit-scrollbar {
+  display: none;
 }
 
 .phoneSpeaker {
@@ -1422,10 +1438,13 @@ body.menuFixed {
     overflow: hidden;
   }
   .adDemoGallery .row {
+    align-items: stretch;
     height: 100%;
   }
   .adDemoList {
-    max-height: 100%;
+    height: clamp(562px, 86.56vh, 844px);
+    margin-top: 3.85rem;
+    max-height: calc(100% - 3.85rem);
     overflow: hidden;
   }
   .galleryHeading {
@@ -1456,7 +1475,7 @@ body.menuFixed {
   }
   .adPreviewHeader,
   .phoneFrame {
-    width: clamp(260px, 45vh, 390px);
+    width: clamp(260px, 40vh, 390px);
   }
   .adPreviewHeader {
     margin-bottom: 0.45rem;
@@ -1498,4 +1517,6 @@ body.menuFixed {
 }
 #footer p {
   color: white;
-}/*# sourceMappingURL=style.css.map */
+}
+
+/*# sourceMappingURL=style.css.map */
