@@ -1131,16 +1131,29 @@ body.menuFixed {
 
 #skills .brandArea {
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  align-items: flex-start;
+  justify-content: space-between;
 }
 #skills .skillCard {
   display: flex;
   justify-content: flex-start;
   align-items: center;
   flex-direction: column;
-  min-width: 320px;
-  max-width: 350px;
-  min-height: 250px;
+  width: calc(25% - 0.75rem);
+  min-height: 260px;
+  margin-bottom: 1rem;
+}
+#skills .skillCard ul {
+  list-style: none;
+  width: 100%;
+  padding: 0 0.5rem;
+  color: darkcyan;
+  text-align: center;
+}
+#skills .skillCard li {
+  font-size: 0.82rem;
+  line-height: 1.7;
+  letter-spacing: 1px;
 }
 #skills .brand {
   display: flex;
@@ -1181,10 +1194,18 @@ body.menuFixed {
 }
 @media screen and (max-width: 768px) {
   #skills .skillCard {
-    min-width: 251px;
+    width: calc(50% - 0.75rem);
   }
-  #skills p {
-    font-size: 1.2rem;
+  #skills .skillCard li {
+    font-size: 1.15rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  #skills .skillCard {
+    width: 100%;
+  }
+  #skills .skillCard li {
+    font-size: 1rem;
   }
 }
 

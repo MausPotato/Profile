@@ -7,10 +7,3 @@ window.addEventListener("scroll", function() {
   }
 });
 
-document.querySelectorAll(".scroll").forEach(function(el) {
-  el.addEventListener("click", function() {
-    let target = document.querySelector(el.getAttribute("href"));
-    let targetPos = target.offsetTop;
-    console.log(target, targetPos);
-  });
-});
