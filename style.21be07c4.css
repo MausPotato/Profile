@@ -1276,6 +1276,8 @@ body.menuFixed {
 @media screen and (max-width: 480px) {
   #portfolio .works {
     margin-bottom: 1rem;
+    background-color: rgba(255, 255, 255, 0.72);
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.12);
   }
 }
 
