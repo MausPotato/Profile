@@ -453,12 +453,6 @@ body {
       flex-direction: column;
       align-items: center;
       font-size: 1.4rem;
-      &::after {
-        content: "2019/09 ~ 1019/11";
-        padding-left: 1.5rem;
-        background: url(../img/calendar-alt-regular.svg) left/ 1rem no-repeat;
-        fill: darkcyan;
-      }
     }
     .who {
       display: flex;
@@ -471,7 +465,10 @@ body {
       }
     }
     .when {
-      display: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.3rem;
     }
     .what {
       font-size: 1.3rem;
@@ -500,9 +497,6 @@ body {
       font-size: 1.2rem;
       span {
         text-align: center;
-      }
-      &::after {
-        display: none;
       }
     }
     .when {
@@ -605,9 +599,10 @@ body {
   }
   .works {
     flex-direction: column;
-    min-height: 410px;
+    align-items: flex-start;
+    min-height: 610px;
     border-radius: 12px;
-    padding: 8px;
+    padding: 8px 8px 1rem;
     transition: all 0.2s ease;
     &:hover {
       transform: translateY(-4px);
@@ -615,6 +610,7 @@ body {
     }
   }
   img {
+    align-self: center;
     width: 90%;
     min-height: 200px;
     aspect-ratio: 16 / 9;
@@ -625,12 +621,42 @@ body {
   h3 {
     font-size: 1.2rem;
     line-height: 2;
+    align-self: center;
+    text-align: center;
+  }
+  .projectType {
+    display: block;
+    width: 90%;
+    color: darkcyan;
+    font-size: .75rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin: 0 auto .4rem;
   }
   p {
-    flex-grow: 1;
+    width: 100%;
     font-size: .8rem;
-    text-indent: 1rem;
     padding: 0 1rem;
+  }
+  .projectIntro {
+    min-height: 3rem;
+    margin-bottom: .75rem;
+    text-indent: 0;
+  }
+  .projectDetails {
+    width: 90%;
+    margin: 0 auto;
+    color: var(--light-font);
+    font-size: .78rem;
+    line-height: 1.5;
+    dt {
+      color: darkcyan;
+      font-weight: 700;
+      margin-top: .55rem;
+    }
+    dd {
+      margin: .15rem 0 0;
+    }
   }
   a {
     color: var(--light-font);
@@ -645,6 +671,12 @@ body {
      p {
       font-size: 1.2rem;
      }
+    .projectType {
+      font-size: 1rem;
+    }
+    .projectDetails {
+      font-size: 1.1rem;
+    }
   }
   @include at-breakpoint(sm) {
     .works {

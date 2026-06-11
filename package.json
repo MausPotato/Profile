@@ -5,12 +5,12 @@
   "main": "index.js",
   "scripts": {
     "dev": "parcel ./src/index.html",
-    "build": "rm -rf dist && parcel build ./src/index.html --public-url . --no-cache --no-source-maps --experimental-scope-hoisting",
+    "build": "parcel build ./src/index.html --public-url . --no-cache --no-source-maps --experimental-scope-hoisting",
     "deploy": "npm run build && gh-pages -d dist"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/MausPotato"
+    "url": "git+https://github.com/MausPotato/Profile.git"
   },
   "author": "",
   "license": "ISC",
@@ -22,9 +22,9 @@
     "url-loader": "^2.2.0"
   },
   "bugs": {
-    "url": "https://github.com/MausPotato/issues"
+    "url": "https://github.com/MausPotato/Profile/issues"
   },
-  "homepage": "https://github.com/MausPotato#readme",
+  "homepage": "https://github.com/MausPotato/Profile#readme",
   "devDependencies": {
     "gh-pages": "^2.1.1",
     "parcel-bundler": "^1.12.4",

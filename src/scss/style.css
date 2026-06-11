@@ -1057,12 +1057,6 @@ body.menuFixed {
     align-items: center;
     font-size: 1.4rem;
   }
-  #resume .where::after {
-    content: "2019/09 ~ 1019/11";
-    padding-left: 1.5rem;
-    background: url(../img/calendar-alt-regular.svg) left/1rem no-repeat;
-    fill: darkcyan;
-  }
   #resume .who {
     display: flex;
     justify-content: center;
@@ -1074,7 +1068,10 @@ body.menuFixed {
     margin-right: 0.5rem;
   }
   #resume .when {
-    display: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.3rem;
   }
   #resume .what {
     font-size: 1.3rem;
@@ -1102,9 +1099,6 @@ body.menuFixed {
   }
   #resume .where span {
     text-align: center;
-  }
-  #resume .where::after {
-    display: none;
   }
   #resume .when {
     display: flex;
@@ -1200,9 +1194,10 @@ body.menuFixed {
 }
 #portfolio .works {
   flex-direction: column;
-  min-height: 410px;
+  align-items: flex-start;
+  min-height: 610px;
   border-radius: 12px;
-  padding: 8px;
+  padding: 8px 8px 1rem;
   transition: all 0.2s ease;
 }
 #portfolio .works:hover {
@@ -1210,6 +1205,7 @@ body.menuFixed {
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.1);
 }
 #portfolio img {
+  align-self: center;
   width: 90%;
   min-height: 200px;
   aspect-ratio: 16/9;
@@ -1220,12 +1216,42 @@ body.menuFixed {
 #portfolio h3 {
   font-size: 1.2rem;
   line-height: 2;
+  align-self: center;
+  text-align: center;
+}
+#portfolio .projectType {
+  display: block;
+  width: 90%;
+  color: darkcyan;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin: 0 auto 0.4rem;
 }
 #portfolio p {
-  flex-grow: 1;
+  width: 100%;
   font-size: 0.8rem;
-  text-indent: 1rem;
   padding: 0 1rem;
+}
+#portfolio .projectIntro {
+  min-height: 3rem;
+  margin-bottom: 0.75rem;
+  text-indent: 0;
+}
+#portfolio .projectDetails {
+  width: 90%;
+  margin: 0 auto;
+  color: var(--light-font);
+  font-size: 0.78rem;
+  line-height: 1.5;
+}
+#portfolio .projectDetails dt {
+  color: darkcyan;
+  font-weight: 700;
+  margin-top: 0.55rem;
+}
+#portfolio .projectDetails dd {
+  margin: 0.15rem 0 0;
 }
 #portfolio a {
   color: var(--light-font);
@@ -1239,6 +1265,12 @@ body.menuFixed {
   }
   #portfolio p {
     font-size: 1.2rem;
+  }
+  #portfolio .projectType {
+    font-size: 1rem;
+  }
+  #portfolio .projectDetails {
+    font-size: 1.1rem;
   }
 }
 @media screen and (max-width: 480px) {
