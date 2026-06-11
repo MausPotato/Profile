@@ -127,13 +127,6 @@ window.addEventListener("scroll", function () {
     document.body.classList.remove("menuFixed");
   }
 });
-document.querySelectorAll(".scroll").forEach(function (el) {
-  el.addEventListener("click", function () {
-    let target = document.querySelector(el.getAttribute("href"));
-    let targetPos = target.offsetTop;
-    console.log(target, targetPos);
-  });
-});
 },{}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
